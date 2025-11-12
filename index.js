@@ -47,19 +47,6 @@ async function run() {
       }
     });
 
-    //bills api
-    // app.get("/bills", async (req, res) => {
-    //   const email = req.query.email;
-    //   const query = {};
-    //   if (email) {
-    //     query.email = email;
-    //   }
-    //   const cursor = billsCollection.find(query);
-    //   const result = await cursor.toArray();
-    //   res.send(result);
-    // });
-    // ... (inside run() function, replace your existing app.get("/bills", ...) with this)
-
     app.get("/bills", async (req, res) => {
       const email = req.query.email;
       const category = req.query.category;
@@ -153,6 +140,3 @@ run().catch(console.dir);
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
-
-// assignment-ten
-// THgOqwrkCaBYyZEY
