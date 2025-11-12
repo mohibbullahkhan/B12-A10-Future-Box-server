@@ -114,7 +114,24 @@ async function run() {
 
       res.send(result);
     });
+    app.put("/myBills/:id", async (req, res) => {
+      const { id } = req.params;
+      const data = req.body;
+      // console.log(id)
+      // console.log(data)
+      const objectId = new ObjectId(id);
+      const filter = { _id: objectId };
+      const update = {
+        $set: data,
+      };
 
+      const result = await myBillsCollection.updateOne(filter, update);
+
+      res.send({
+        success: true,
+        result,
+      });
+    });
     app.delete("/myBills/:id", async (req, res) => {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) };
