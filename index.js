@@ -102,15 +102,6 @@ async function run() {
       const result = await myBillsCollection.insertOne(newBill);
       res.send(result);
     });
-    // app.get("/myBills", async (req, res) => {
-    //   const query = {};
-    //   if (query.email) {
-    //     query.email = email;
-    //   }
-    //   const cursor = myBillsCollection.find(query);
-    //   const result = await cursor.toArray();
-    //   res.send(result);
-    // });
 
     app.get("/myBills", async (req, res) => {
       const userEmail = req.query.email;
